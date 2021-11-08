@@ -1,13 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Indie Flower', cursive, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #9b59b6;
+  display: flex;
+  justify-content: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  box-sizing: border-box;
+}
+
+.form-control {
+  position: relative;
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+}
+
+.formContainer {
+  background-color: aliceblue;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  width: 600px;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+form {
+  padding: 30px 40px;
+}
+
+.form-control input {
+  border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  padding: 10px;
+  font-family: inherit;
+  ;
+}
+
+#submit-button {
+  width: 100%;
+  background-color: #9b59b6;
+  font-size: 25px;
+  font-family: inherit;
+}
+
+.form-control i {
+  position: absolute;
+  top: 40px;
+  right: -21px;
+  visibility: hidden;
+}
+
+.form-control small {
+  visibility: hidden;
+}
+
+.form-control label {
+  font-weight: normal;
+}
+
+.form-control.error small {
+  visibility: visible;
+}
+
+.form-control.error input {
+  border: solid red 2px;
+}
+
+.form-control.success input {
+  border: solid green 2px;
+}
+
+.form-control.success .fa-check-circle {
+  visibility: visible;
+}
+
+.form-control.error .fa-exclamation-circle {
+  visibility: visible;
+}
+
+.fa-exclamation-circle {
+  color: red;
+}
+
+.fa-check-circle {
+  color: green;
+}
+
+fieldset {
+  border: none;
+  border-top: 2px solid;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  padding-top: 3px;
 }
