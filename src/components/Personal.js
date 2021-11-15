@@ -1,8 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Error from './Error';
 
-const Personal = () => {
+const Personal = ({ addPersonal }) => {
   const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+
+  useEffect(() => {
+    addPersonal({ firstName, lastName });
+  }, [firstName, lastName]);
+
   return (
     <>
       <div className='form-control'>
@@ -24,6 +30,10 @@ const Personal = () => {
       <div className='form-control'>
         <label htmlFor='lastName'>Last Name</label>
         <input
+          onChange={(e) => {
+            setLastName(e.target.value);
+          }}
+          value={lastName}
           type='text'
           name=''
           id='lastName'

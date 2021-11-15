@@ -9,6 +9,7 @@ const postalCode = document.getElementById('code');
 const password = document.getElementById('password');
 const passwordConfirmation = document.getElementById('confirmPassword');
  */
+
 const form = document.getElementById('form');
 
 firstName.addEventListener('input', () => {
@@ -51,11 +52,12 @@ email.addEventListener('input', () => {
   }
 });
 
-phone.addEventListener('input', () => {
+phone.addEventListener('input', (e) => {
   var number = phone.value;
 
   number = number.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
   phone.value = number;
+
   if (phone.validity.patternMismatch) {
     setError(phone, 'Enter a valid phone number');
   } else if (phone.validity.valueMissing) {

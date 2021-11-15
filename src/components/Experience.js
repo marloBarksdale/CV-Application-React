@@ -1,6 +1,6 @@
 import { FaTimes, FaEdit } from 'react-icons/fa';
 
-const Experience = ({ expList, deleteExp, editExp }) => {
+const Experience = ({ expList, deleteExp, editExp, editMode }) => {
   return (
     <>
       {expList.map((exp, index) => (
@@ -11,12 +11,21 @@ const Experience = ({ expList, deleteExp, editExp }) => {
               {' '}
               {exp.company} ({exp.from} - {exp.to})
             </small>
-            <FaTimes
-              style={{ color: 'red' }}
-              onClick={() => deleteExp(exp.id)}
-            />
-            <FaEdit style={{ color: 'blue' }} onClick={() => editExp(exp.id)} />{' '}
           </h2>
+          {editMode ? (
+            <>
+              <FaTimes
+                style={{ color: 'red' }}
+                onClick={() => deleteExp(exp.id)}
+              />
+              <FaEdit
+                style={{ color: 'blue' }}
+                onClick={() => editExp(exp.id)}
+              />{' '}
+            </>
+          ) : (
+            ' '
+          )}
         </div>
       ))}
     </>

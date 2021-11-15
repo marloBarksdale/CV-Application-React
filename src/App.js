@@ -3,12 +3,14 @@ import Form from './components/Form';
 import { useState } from 'react';
 import getID from './getID';
 import Profile from './components/Profile';
+
 function App() {
   const [editMode, toggle] = useState(true);
   const [Person, editPerson] = useState({
     firstName: 'Lynden',
     lastName: 'Flood',
-    email: 'lflood1@gmail.com',
+    email: 'somebody@gmail.com',
+    phone: '123-456-7890',
     expList: [
       {
         id: getID(),
@@ -40,29 +42,19 @@ function App() {
         from: '2014-08-05',
         to: '2016-08-12',
       },
-      {
-        id: getID(),
-        college: 'A',
-        degree: 'MSc Data Science',
-        from: '2014-08-05',
-        to: '2016-08-12',
-      },
-      {
-        id: getID(),
-        college: 'B',
-        degree: 'MSc Data Science',
-        from: '2014-08-05',
-        to: '2016-08-12',
-      },
-      {
-        id: getID(),
-        college: 'C',
-        degree: 'MSc Data Science',
-        from: '2014-08-05',
-        to: '2016-08-12',
-      },
     ],
   });
+
+  const addContact = ({ email, phone }) => {
+    editPerson({ ...Person, email: email, phone: phone });
+  };
+  const addPersonal = ({ firstName, lastName }) => {
+    editPerson({
+      ...Person,
+      firstName: firstName,
+      lastName: lastName,
+    });
+  };
 
   const addExperience = (newExp) => {
     if (newExp.id) {
@@ -111,11 +103,14 @@ function App() {
   const toggleEdit = () => {
     toggle(!editMode);
   };
+
   return (
-    <div className='container'>
-      <h1>Enter your Information Here</h1>
+    <>
+      {editMode ? <h1>Enter your Information Here</h1> : ''}
       {editMode ? (
         <Form
+          addPersonal={addPersonal}
+          addContact={addContact}
           addExperience={addExperience}
           expList={Person.expList}
           deleteExp={deleteExp}
@@ -125,9 +120,14 @@ function App() {
           toggleEdit={toggleEdit}
         />
       ) : (
-        <Profile />
+        <Profile
+          eduList={Person.eduList}
+          expList={Person.expList}
+          editMode={editMode}
+          Person={Person}
+        />
       )}
-    </div>
+    </>
   );
 }
 

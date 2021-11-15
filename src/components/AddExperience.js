@@ -54,6 +54,7 @@ const AddExperience = ({ addExperience, expList, deleteExp }) => {
               expList={expList}
               deleteExp={deleteExp}
               editExp={editExp}
+              editMode={true}
             />
           ) : (
             'No experience added'
@@ -70,7 +71,6 @@ const AddExperience = ({ addExperience, expList, deleteExp }) => {
             id='title'
             type='text'
             placeholder='Title'
-            required
           />
           <Error />
         </div>
@@ -84,7 +84,6 @@ const AddExperience = ({ addExperience, expList, deleteExp }) => {
             id='company'
             type='text'
             placeholder='Company'
-            required
           />
           <Error />
         </div>
@@ -99,7 +98,6 @@ const AddExperience = ({ addExperience, expList, deleteExp }) => {
             id='from'
             type='date'
             placeholder='From'
-            required
           />
           <Error />
         </div>
@@ -114,7 +112,6 @@ const AddExperience = ({ addExperience, expList, deleteExp }) => {
             id='to'
             type='date'
             placeholder='To'
-            required
           />
           <Error />
         </div>

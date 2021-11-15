@@ -68,7 +68,6 @@ const AddEducation = ({ addEducation, eduList, deleteEdu }) => {
             id='college'
             type='text'
             placeholder='College'
-            required
           />
           <Error />
         </div>
@@ -82,7 +81,6 @@ const AddEducation = ({ addEducation, eduList, deleteEdu }) => {
             id='degree'
             type='text'
             placeholder='Degree'
-            required
           />
           <Error />
         </div>
@@ -96,7 +94,6 @@ const AddEducation = ({ addEducation, eduList, deleteEdu }) => {
             id='collegeFrom'
             type='date'
             placeholder='From'
-            required
           />
           <Error />
         </div>
@@ -111,7 +108,6 @@ const AddEducation = ({ addEducation, eduList, deleteEdu }) => {
             id='collegeTo'
             type='date'
             placeholder='To'
-            required
           />
           <Error />
         </div>

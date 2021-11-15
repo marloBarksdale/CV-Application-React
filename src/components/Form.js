@@ -12,7 +12,8 @@ const Form = ({
   addEducation,
   eduList,
   deleteEdu,
-  editExp,
+  addPersonal,
+  addContact,
   toggleEdit,
 }) => {
   const onSubmit = (e) => {
@@ -23,14 +24,13 @@ const Form = ({
   return (
     <div className='formContainer'>
       <form action='' onSubmit={onSubmit}>
-        <Personal />
-        <Contact />
+        <Personal addPersonal={addPersonal} />
+        <Contact addContact={addContact} />
 
         <AddExperience
           addExperience={addExperience}
           expList={expList}
           deleteExp={deleteExp}
-          editExp={editExp}
         />
         <AddEducation
           addEducation={addEducation}
