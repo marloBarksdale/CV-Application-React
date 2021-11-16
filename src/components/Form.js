@@ -15,6 +15,7 @@ const Form = ({
   addPersonal,
   addContact,
   toggleEdit,
+  Person,
 }) => {
   const onSubmit = (e) => {
     e.preventDefault();
@@ -24,8 +25,8 @@ const Form = ({
   return (
     <div className='formContainer'>
       <form action='' onSubmit={onSubmit}>
-        <Personal addPersonal={addPersonal} />
-        <Contact addContact={addContact} />
+        <Personal addPersonal={addPersonal} Person={Person} />
+        <Contact addContact={addContact} Person={Person} />
 
         <AddExperience
           addExperience={addExperience}
@@ -38,7 +39,12 @@ const Form = ({
           deleteEdu={deleteEdu}
         />
 
-        <input type='submit' value='Submit' id='submit-button' />
+        <input
+          type='submit'
+          value='Submit'
+          id='submit-button'
+          className='btn'
+        />
       </form>
     </div>
   );

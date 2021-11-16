@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Error from './Error';
 
-const Contact = ({ addContact }) => {
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
+const Contact = ({ addContact, Person }) => {
+  const [email, setEmail] = useState(Person.email);
+  const [phone, setPhone] = useState(Person.phone);
 
   useEffect(() => {
     addContact({ email, phone });

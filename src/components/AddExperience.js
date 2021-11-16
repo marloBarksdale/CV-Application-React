@@ -37,6 +37,9 @@ const AddExperience = ({ addExperience, expList, deleteExp }) => {
   const editExp = (id) => {
     const [toEdit] = expList.filter((exp) => exp.id === id);
     console.log(toEdit);
+    const title = document.getElementById('title');
+
+    title.focus();
 
     setTitle(toEdit.title);
     setCompany(toEdit.company);
@@ -118,7 +121,7 @@ const AddExperience = ({ addExperience, expList, deleteExp }) => {
       </fieldset>
       <input
         type='button'
-        className='Addbutton'
+        className='btn Addbutton'
         value='Add Experience'
         onClick={onAdd}
       />

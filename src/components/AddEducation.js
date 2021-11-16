@@ -35,6 +35,9 @@ const AddEducation = ({ addEducation, eduList, deleteEdu }) => {
   const editEdu = (id) => {
     const toEdit = eduList.filter((edu) => edu.id === id);
     console.log(toEdit[0].college);
+    const college = document.getElementById('college');
+
+    college.focus();
 
     setCollege(toEdit[0].college);
     setDegree(toEdit[0].degree);
@@ -52,6 +55,7 @@ const AddEducation = ({ addEducation, eduList, deleteEdu }) => {
               eduList={eduList}
               deleteEdu={deleteEdu}
               editEdu={editEdu}
+              editMode={true}
             />
           ) : (
             'No experience added'
@@ -115,7 +119,7 @@ const AddEducation = ({ addEducation, eduList, deleteEdu }) => {
       <input
         type='button'
         value='Add Education'
-        className='Addbutton'
+        className=' btn Addbutton'
         onClick={onAdd}
       />
     </div>

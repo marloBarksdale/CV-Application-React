@@ -2,7 +2,7 @@ import React from 'react';
 import Experience from './Experience';
 import Education from './Education';
 
-const Profile = ({ expList, eduList, editMode, Person }) => {
+const Profile = ({ expList, eduList, editMode, Person, toggleEdit }) => {
   console.log(expList);
   console.log(eduList);
 
@@ -41,6 +41,9 @@ const Profile = ({ expList, eduList, editMode, Person }) => {
             )}
           </div>
         </fieldset>
+        <button onClick={toggleEdit} id='edit-button' className='btn'>
+          Edit
+        </button>
       </form>
     </div>
   );

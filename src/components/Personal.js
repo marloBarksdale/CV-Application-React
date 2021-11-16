@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Error from './Error';
 
-const Personal = ({ addPersonal }) => {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
+const Personal = ({ addPersonal, Person }) => {
+  const [firstName, setFirstName] = useState(Person.firstName);
+  const [lastName, setLastName] = useState(Person.lastName);
 
   useEffect(() => {
     addPersonal({ firstName, lastName });

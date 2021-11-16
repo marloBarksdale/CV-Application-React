@@ -4,7 +4,7 @@ body {
   font-family: 'Indie Flower', cursive, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #9b59b6;
+  background-color: #597ab6;
   display: flex;
   justify-content: center;
 }
@@ -24,6 +24,8 @@ body {
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
   transition: 1000ms cubic-bezier(0.075, 0.82, 0.165, 3) transform;
   cursor: pointer;
+  display: flex;
+  justify-content: space-between;
 }
 
 .listing:hover {
@@ -41,7 +43,7 @@ body {
   margin-bottom: 2rem;
 }
 
-svg {
+.listing svg {
   float: right;
 }
 
@@ -135,7 +137,7 @@ input {
   padding-top: 3px;
 }
 
-.Addbutton {
+.btn {
   width: 100%;
   border: none;
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
@@ -148,6 +150,6 @@ input {
   cursor: pointer;
 }
 
-.Addbutton:hover {
+.btn:hover {
   transform: scale(0.991);
 }

@@ -7,10 +7,10 @@ import Profile from './components/Profile';
 function App() {
   const [editMode, toggle] = useState(true);
   const [Person, editPerson] = useState({
-    firstName: 'Lynden',
-    lastName: 'Flood',
-    email: 'somebody@gmail.com',
-    phone: '123-456-7890',
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
     expList: [
       {
         id: getID(),
@@ -118,6 +118,7 @@ function App() {
           eduList={Person.eduList}
           deleteEdu={deleteEdu}
           toggleEdit={toggleEdit}
+          Person={Person}
         />
       ) : (
         <Profile
@@ -125,6 +126,7 @@ function App() {
           expList={Person.expList}
           editMode={editMode}
           Person={Person}
+          toggleEdit={toggleEdit}
         />
       )}
     </>

@@ -5,15 +5,15 @@ const Experience = ({ expList, deleteExp, editExp, editMode }) => {
     <>
       {expList.map((exp, index) => (
         <div className='listing ' key={index}>
-          <h2>
-            {exp.title} ,{' '}
+          <div className='listing-content'>
+            {' '}
+            <h2>{exp.title} </h2> <h3> {exp.company}</h3>{' '}
             <small>
-              {' '}
-              {exp.company} ({exp.from} - {exp.to})
+              ({exp.from} - {exp.to})
             </small>
-          </h2>
+          </div>
           {editMode ? (
-            <>
+            <div className='listing-delete-edit'>
               <FaTimes
                 style={{ color: 'red' }}
                 onClick={() => deleteExp(exp.id)}
@@ -22,7 +22,7 @@ const Experience = ({ expList, deleteExp, editExp, editMode }) => {
                 style={{ color: 'blue' }}
                 onClick={() => editExp(exp.id)}
               />{' '}
-            </>
+            </div>
           ) : (
             ' '
           )}
