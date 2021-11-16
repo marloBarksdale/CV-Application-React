@@ -1,6 +1,6 @@
 {
   "name": "cv-project",
-  "homepage": "http://{marloBarksdale}.github.io/{CV-Application-React}",
+  "homepage": "http://marloBarksdale.github.io/CV-Application-React",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
