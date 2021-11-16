@@ -11,38 +11,8 @@ function App() {
     lastName: '',
     email: '',
     phone: '',
-    expList: [
-      {
-        id: getID(),
-        company: 'Shopify',
-        title: 'Software Engineer',
-        from: '2018-03-22',
-        to: '2011-09-04',
-      },
-      {
-        id: getID(),
-        company: 'Google',
-        title: 'Web Architect',
-        from: '2009-08-06',
-        to: '2012-01-31',
-      },
-    ],
-    eduList: [
-      {
-        id: getID(),
-        college: 'MIT',
-        degree: 'BSc Computer Science',
-        from: '2010-05-20',
-        to: '2014-06-21',
-      },
-      {
-        id: getID(),
-        college: 'Coppin',
-        degree: 'MSc Data Science',
-        from: '2014-08-05',
-        to: '2016-08-12',
-      },
-    ],
+    expList: [],
+    eduList: [],
   });
 
   const addContact = ({ email, phone }) => {
